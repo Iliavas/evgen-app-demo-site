@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+    <title>EvgenApp</title>
+</head>
+<body>
+    <div class="public">
+        <div class="header">
+            <img src="./imgs/logo.svg" alt="">
+            <span id="head-span"></span>
+        </div>
+
+        <div id="firstscreen">
+            <div class="first-screen__info-block">
+                <div class="info-block__head">EvgenApp</div>
+                <div class="info-block__descr">
+                    Мы делаем жизнь 
+                    <span class="colorize">учеников</span> и 
+                    <span class="colorize">учителей</span> проще
+                </div>
+                <button class="btn" id="btn">Связаться</button>
+            </div>
+            <div class="first-screen__decor">
+                <img src="./imgs/img1.svg" alt="">
+            </div>
+        </div>
+        <div id="secondscreen">
+            <div class="contents">
+                <div class="container">
+                    <div class="container__head">
+                        Стримминг
+                    </div>
+                    <div class="content__content">
+                        <img src="./imgs/live-streaming 1.svg" alt="">
+
+                        <button class="btn btn-small">Демо</button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="container__head">
+                        Тесты
+                    </div>
+                    <div class="content__content">
+                        <img src="./imgs/test-svgrepo-com 1.svg" alt="">
+
+                        <button class="btn btn-small">Демо</button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="container__head">
+                        Уроки
+                    </div>
+                    <div class="content__content">
+                        <img width="119px" src="./imgs/distance-courses-svgrepo-com 1.svg" alt="">
+
+                        <button class="btn btn-small">Демо</button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="container__head">
+                        Расписание
+                    </div>
+                    <div class="content__content">
+                        <img src="./imgs/timetable.svg" alt="" width="119px">
+
+                        <button class="btn btn-small">Демо</button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="container__head">
+                        Дневник
+                    </div>
+                    <div class="content__content">
+                        <img src="./imgs/diary.svg" alt="" width="119px">
+
+                        <button class="btn btn-small">Демо</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="thirdscreen">
+            <div class="partners">
+                <div class="partner">
+                    <div class="partner__logo">
+                        <img src="imgs/ChemTodayLogo.png" alt="">
+                    </div>
+                    <span class="partner__name">
+                        ChemToday
+                    </span>
+                </div>
+
+                <div class="partner">
+                    <div class="partner__logo">
+                        <img src="imgs/Underground robotics logo.png" alt="">
+                    </div>
+                    <span class="partner__name">
+                        Underground Robotics
+                    </span>
+                </div>
+
+                <div class="partner">
+                    <div class="partner__logo">
+                        <img src="imgs/ZHKLogo.png" alt="">
+                    </div>
+                    <span class="partner__name">
+                        Живая классика
+                    </span>
+                </div>
+
+                <div class="partner">
+                    <div class="partner__logo">
+                        <img src="imgs/ITSHLogo.png" alt="">
+                    </div>
+                    <span class="partner__name">
+                        ИТШ 777
+                    </span>
+                </div>
+
+                <div class="partner">
+                    <div class="partner__logo">
+                        <img src="imgs/HouseLogo.png" alt="">
+                    </div>
+                    <span class="partner__name">
+                        Дом молодежи Санкт-Петербурга
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="centered">
+            <iframe src="https://forms.yandex.ru/u/609408c4e9ad4290f6e65c48/?iframe=1" frameborder="0" name="ya-form-609408c4e9ad4290f6e65c48" width="650"></iframe>
+        </div>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script>
+        
+        function isOnScreen(element)
+        {
+            var curPos = element.offset();
+            var curTop = curPos.top;
+            var screenHeight = $(window).height();
+            console.log(curTop)
+            return (curTop > screenHeight) ? false : true;
+        }
+        var head = document.getElementById("head-span");
+        var screens = [
+            ["#secondscreen", "Что мы предлагаем"],
+            ["#thirdscreen", "Наши партнеры"],
+            ["#centered", "Обратная связь"],
+        ]
+        window.onscroll = () => {
+            console.log("scroll")
+            for (let i = 0; i < 3; ++i) {
+                if (isOnScreen($(screens[i][0]))){
+                    console.log(i);
+                    head.innerHTML = screens[i][1]
+                }
+            }
+        }
+
+    </script>
+
+
+    <script>
+        document.getElementById("btn").onclick = () => {
+            location.replace("#centered")
+        }
+    </script>
+
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(77869135, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/77869135" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>
